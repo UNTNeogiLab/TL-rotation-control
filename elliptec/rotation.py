@@ -53,7 +53,7 @@ class Motor(serial.Serial):
 
 			self.write(command)
 			#print(command)
-			response = self.read_until(terminator=b'\n')
+			response = self.read_until(expected=b'\n')
 			#print(response)
 			self.status = parse(response)
 			error_check(self.status)
