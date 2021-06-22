@@ -37,7 +37,7 @@ class Motor(serial.Serial):
 
 			self.request = command
 			self.write(command)
-			self.response = self.read_until(terminator=b'\n')
+			self.response = self.read_until(expected=b'\n')
 			self.status = parse(self.response)
 			move_check(self.status)
 
@@ -70,7 +70,7 @@ class Motor(serial.Serial):
 
 			self.write(command)
 			#print(command)
-			response = self.read_until(terminator=b'\n')
+			response = self.read_until(expected=b'\n')
 			print(response)
 			self.status = parse(response)
 			error_check(self.status)
@@ -98,7 +98,7 @@ class Motor(serial.Serial):
 			command += msg
 		#print(command)
 		self.write(command)
-		response = self.read_until(terminator=b'\n')
+		response = self.read_until(expected=b'\n')
 		#print(response)
 		return parse(response)
 
