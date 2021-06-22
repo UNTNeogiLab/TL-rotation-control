@@ -1,3 +1,4 @@
+from setuptools import setup
 setup(
    name='elliptec',
    version='1.0',
