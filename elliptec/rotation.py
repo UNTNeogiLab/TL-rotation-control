@@ -2,8 +2,6 @@ import serial
 from .cmd import get_, set_, mov_
 from .helper import parse, error_check, move_check
 import sys
-from . import status
-
 
 class Motor(serial.Serial):
 
@@ -105,15 +103,15 @@ class Motor(serial.Serial):
 	def __str__(self):
 		string = '\nPort - ' + self.port + '\n\n'
 		for key in self.info:
-			string += (key + ' - ' + str(self.info[key]) + '\n')			
+			string += (key + ' - ' + str(self.info[key]) + '\n')
 		return string
 
 
-	
 
 
 
-	
+
+
 
 
 
