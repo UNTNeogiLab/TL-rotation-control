@@ -74,13 +74,13 @@ class Motor(serial.Serial):
 			error_check(self.status)
 
 	def deg_to_hex(self, deg):
-		factor = self.counts_per_rev//self.range
-		val = hex(deg*factor)
+		factor = self.counts_per_rev/self.range
+		val = float.hex(deg*factor)
 		return val.replace('0x', '').zfill(8).upper()
 
 	def hex_to_deg(self, hexval):
-		factor = self.counts_per_rev//self.range
-		val = round(int(val,16)/factor)
+		factor = self.counts_per_rev/self.range
+		val = float.fromhex(hexval)/factor)
 		return val
 
 
