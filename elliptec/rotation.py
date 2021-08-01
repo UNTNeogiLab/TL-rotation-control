@@ -80,7 +80,7 @@ class Motor(serial.Serial):
 
 	def hex_to_deg(self, hexval):
 		factor = self.counts_per_rev/self.range
-		val = float.fromhex(hexval)/factor)
+		val = float.fromhex(hexval) / factor
 		return val
 
 
