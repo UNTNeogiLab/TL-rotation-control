@@ -75,7 +75,7 @@ class Motor(serial.Serial):
 
 	def deg_to_hex(self, deg):
 		factor = self.counts_per_rev//self.range
-		val = hex(deg*factor)
+		val = hex(int(deg*factor))
 		return val.replace('0x', '').zfill(8).upper()
 
 	def hex_to_deg(self, hexval):
